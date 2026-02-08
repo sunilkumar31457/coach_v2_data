@@ -1,0 +1,118 @@
+/* ==================== PREMIUM AI TEXT VISIBILITY ==================== */
+/* Global text enhancement - ALL AI outputs bright white and attractive */
+
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stMarkdownContainer"] span,
+[data-testid="stMarkdownContainer"] div {
+    color: #FFFFFF !important;
+    font-size: 1.05rem !important;
+    line-height: 1.8 !important;
+    font-weight: 400 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Enhanced headings */
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3,
+[data-testid="stMarkdownContainer"] h4 {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    text-shadow: 0 0 20px rgba(139, 66, 196, 0.7), 0 0 40px rgba(59, 130, 246, 0.4) !important;
+    margin-bottom: 1rem !important;
+}
+
+/* List items */
+[data-testid="stMarkdownContainer"] ul li,
+[data-testid="stMarkdownContainer"] ol li {
+    color: #F8FAFC !important;
+    line-height: 2 !important;
+    margin-bottom: 1rem !important;
+    font-size: 1.05rem !important;
+}
+
+/* Strong text with cosmic glow */
+[data-testid="stMarkdownContainer"] strong,
+[data-testid="stMarkdownContainer"] b {
+    color: #22D3EE !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 12px rgba(6, 182, 212, 0.6) !important;
+}
+
+/* Code blocks */
+[data-testid="stMarkdownContainer"] code {
+    background: rgba(107, 46, 158, 0.25) !important;
+    color: #22D3EE !important;
+    padding: 4px 10px !important;
+    border-radius: 8px !important;
+    border: 1.5px solid rgba(6, 182, 212, 0.4) !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+}
+
+/* Blockquotes */
+[data-testid="stMarkdownContainer"] blockquote {
+    border-left: 4px solid #6B2E9E !important;
+    background: rgba(107, 46, 158, 0.2) !important;
+    padding: 1.2rem 1.8rem !important;
+    color: #F8FAFC !important;
+    margin: 1.5rem 0 !important;
+    border-radius: 0 12px 12px 0 !important;
+}
+
+/* Links */
+[data-testid="stMarkdownContainer"] a {
+    color: #22D3EE !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5) !important;
+    transition: all 0.3s ease !important;
+}
+
+[data-testid="stMarkdownContainer"] a:hover {
+    color: #60A5FA !important;
+    text-shadow: 0 0 18px rgba(6, 182, 212, 0.9) !important;
+}
+
+/* Success/Info/Warning messages */
+.stSuccess p,
+.stInfo p,
+.stWarning p,
+.stError p {
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+    font-size: 1.05rem !important;
+}
+
+/* Tables */
+[data-testid="stMarkdownContainer"] table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+}
+
+[data-testid="stMarkdownContainer"] table th {
+    background: rgba(107, 46, 158, 0.35) !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    padding: 14px !important;
+    border: 1px solid rgba(107, 46, 158, 0.5) !important;
+    text-align: left !important;
+}
+
+[data-testid="stMarkdownContainer"] table td {
+    color: #F8FAFC !important;
+    padding: 12px !important;
+    border: 1px solid rgba(107, 46, 158, 0.3) !important;
+}
+
+/* Ensure all paragraph text is bright */
+.element-container p {
+    color: #FFFFFF !important;
+}
+
+/* Text areas and output areas */
+[data-testid="stText"],
+[data-testid="stCaption"] {
+    color: #F8FAFC !important;
+}

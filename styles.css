@@ -1,0 +1,573 @@
+/* ================== ULTRA PREMIUM DEEP COSMOS - ENHANCED ================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Feature settings */
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+:root {
+  /* Enhanced Cosmic Palette */
+  --cosmos-void: #020509;
+  --cosmos-deep: #0A0E27;
+  --cosmos-mid: #151B3F;
+  --nebula-purple: #6B2E9E;
+  --nebula-violet: #8B42C4;
+  --nebula-pink: #D946EF;
+  --cosmic-blue: #1E3A8A;
+  --stellar-blue: #3B82F6;
+  --electric-blue: #60A5FA;
+  --star-white: #E0E7FF;
+  --star-bright: #FFFFFF;
+  --aurora-cyan: #06B6D4;
+  --aurora-teal: #22D3EE;
+  --stellar-gold: #F59E0B;
+  --plasma-orange: #FB923C;
+  --text-cosmic: #F8FAFC;
+  --text-nebula: #C7D2FE;
+  --text-dim: #94A3B8;
+}
+
+/* ==================== DEEP SPACE CANVAS ==================== */
+[data-testid="stAppViewContainer"] {
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(107, 46, 158, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 60%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, var(--cosmos-void) 0%, var(--cosmos-deep) 40%, var(--cosmos-mid) 100%) !important;
+  font-family: 'Space Grotesk', 'Rajdhani', sans-serif !important;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ==================== ANIMATED STAR FIELD - LAYER 1 (Large Stars) ==================== */
+[data-testid="stAppViewContainer"]::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(2px 2px at 15% 25%, white, transparent),
+    radial-gradient(3px 3px at 45% 15%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 75% 40%, white, transparent),
+    radial-gradient(1px 1px at 35% 60%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 85% 70%, white, transparent),
+    radial-gradient(1px 1px at 25% 85%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(2px 2px at 60% 90%, white, transparent),
+    radial-gradient(3px 3px at 90% 25%, rgba(255, 255, 255, 0.95), transparent);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  animation: cosmos-drift 180s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+/* ==================== ANIMATED STAR FIELD - LAYER 2 (Small Twinkling) ==================== */
+[data-testid="stAppViewContainer"]::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(1px 1px at 10% 10%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 30% 20%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 50% 30%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 70% 45%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 20% 55%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 80% 80%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 65% 92%, rgba(255, 255, 255, 0.8), transparent);
+  background-size: 100% 100%;
+  animation: twinkle 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+/* ==================== SHOOTING STARS ==================== */
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(300px) translateY(300px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow:
+    0 0 4px 2px rgba(255, 255, 255, 0.8),
+    0 0 8px 4px rgba(99, 102, 241, 0.6),
+    -30px 0 20px 10px rgba(255, 255, 255, 0.3);
+  animation: shooting-star 3s linear infinite;
+  z-index: 1;
+}
+
+@keyframes cosmos-drift {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-25%, -25%) rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ==================== ULTRA PREMIUM GLASS CARDS ==================== */
+.glass-card {
+  background: rgba(10, 14, 39, 0.75);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(107, 46, 158, 0.35);
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow:
+    0 12px 40px rgba(107, 46, 158, 0.2),
+    0 0 80px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(107, 46, 158, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Holographic Nebula Effect */
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(107, 46, 158, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+  animation: nebula-pulse 12s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Holographic Scan Line */
+.glass-card::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(139, 66, 196, 0.8),
+      rgba(59, 130, 246, 0.8),
+      transparent);
+  animation: scan-line 8s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(1px);
+}
+
+@keyframes nebula-pulse {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+  }
+
+  33% {
+    transform: translate(5%, 5%) scale(1.05);
+    opacity: 0.4;
+  }
+
+  66% {
+    transform: translate(-5%, 5%) scale(1.03);
+    opacity: 0.35;
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 200%;
+  }
+}
+
+.glass-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(139, 66, 196, 0.7);
+  box-shadow:
+    0 20px 70px rgba(107, 46, 158, 0.35),
+    0 0 100px rgba(59, 130, 246, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(107, 46, 158, 0.3);
+}
+
+/* ==================== COSMIC TYPOGRAPHY ==================== */
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
+  color: var(--text-cosmic) !important;
+  text-shadow:
+    0 0 20px rgba(139, 66, 196, 0.6),
+    0 0 40px rgba(59, 130, 246, 0.3);
+}
+
+/* Stellar Gradient Text with Enhanced Shimmer */
+.cosmic-gradient-text {
+  background: linear-gradient(135deg,
+      #E0E7FF 0%,
+      #A78BFA 25%,
+      #60A5FA 50%,
+      #F59E0B 75%,
+      #E0E7FF 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: stellar-shimmer 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(139, 66, 196, 0.5));
+}
+
+@keyframes stellar-shimmer {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+    filter: brightness(1) drop-shadow(0 0 15px rgba(139, 66, 196, 0.5));
+  }
+
+  50% {
+    background-position: 100% 50%;
+    filter: brightness(1.3) drop-shadow(0 0 25px rgba(59, 130, 246, 0.7));
+  }
+}
+
+/* ==================== ULTRA STELLAR BUTTONS ==================== */
+div[data-testid="stButton"] button {
+  background: linear-gradient(135deg,
+      var(--nebula-purple) 0%,
+      var(--nebula-violet) 50%,
+      var(--stellar-blue) 100%) !important;
+  background-size: 200% 200%;
+  color: white !important;
+  border-radius: 18px !important;
+  padding: 16px 36px !important;
+  font-weight: 700 !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.08em !important;
+  border: 1.5px solid rgba(139, 66, 196, 0.5) !important;
+  box-shadow:
+    0 10px 30px rgba(107, 46, 158, 0.5),
+    0 0 40px rgba(59, 130, 246, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+/* Holographic Glow on Hover */
+div[data-testid="stButton"] button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 0.9),
+      rgba(139, 66, 196, 0.5),
+      transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.7s, height 0.7s;
+  pointer-events: none;
+}
+
+div[data-testid="stButton"] button:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+div[data-testid="stButton"] button:hover {
+  transform: scale(1.08) translateY(-3px) !important;
+  background-position: 100% 50%;
+  box-shadow:
+    0 15px 50px rgba(107, 46, 158, 0.7),
+    0 0 60px rgba(59, 130, 246, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(139, 66, 196, 0.9) !important;
+}
+
+div[data-testid="stButton"] button:active {
+  transform: scale(1.02) translateY(-1px) !important;
+}
+
+/* ==================== COSMIC INPUT FIELDS ==================== */
+div[data-testid="stTextInput"] input,
+div[data-testid="stTextArea"] textarea,
+div[data-testid="stSelectbox"]>div {
+  background: rgba(10, 14, 39, 0.7) !important;
+  border: 1.5px solid rgba(107, 46, 158, 0.4) !important;
+  border-radius: 14px !important;
+  color: var(--text-cosmic) !important;
+  padding: 16px !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 0.95rem !important;
+  box-shadow:
+    inset 0 2px 10px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(107, 46, 158, 0.1);
+  transition: all 0.3s ease;
+}
+
+div[data-testid="stTextInput"] input:focus,
+div[data-testid="stTextArea"] textarea:focus {
+  border-color: var(--aurora-cyan) !important;
+  background: rgba(10, 14, 39, 0.85) !important;
+  box-shadow:
+    0 0 0 4px rgba(6, 182, 212, 0.15),
+    inset 0 2px 10px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(6, 182, 212, 0.5) !important;
+  outline: none !important;
+}
+
+/* ==================== GLOBAL WIDGET LABELS ==================== */
+label[data-testid="stLabel"],
+div[data-testid="stMarkdownContainer"] p {
+  color: var(--text-cosmic) !important;
+}
+
+div[data-testid="stFileUploader"] section>div>div>span {
+  color: white !important;
+  /* File name in uploader */
+}
+
+
+/* ==================== AURORA PROGRESS BARS ==================== */
+div[data-testid="stProgress"]>div {
+  background: rgba(10, 14, 39, 0.6) !important;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(107, 46, 158, 0.3);
+}
+
+div[data-testid="stProgress"]>div>div {
+  background: linear-gradient(90deg,
+      var(--aurora-cyan) 0%,
+      var(--stellar-blue) 25%,
+      var(--nebula-violet) 50%,
+      var(--stellar-gold) 75%,
+      var(--aurora-cyan) 100%) !important;
+  background-size: 300% 100%;
+  animation: aurora-flow 4s linear infinite;
+  box-shadow:
+    0 0 30px rgba(6, 182, 212, 0.7),
+    0 0 15px rgba(139, 66, 196, 0.5);
+  position: relative;
+}
+
+/* Glowing Progress Highlight */
+div[data-testid="stProgress"]>div>div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+}
+
+@keyframes aurora-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* ==================== HEADER & LAYOUT ==================== */
+[data-testid="stHeader"] {
+  background: rgba(10, 14, 39, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(107, 46, 158, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.stDeployButton {
+  display: none !important;
+}
+
+.block-container {
+  padding-top: 2.5rem !important;
+  padding-bottom: 3rem !important;
+  max-width: 1400px !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==================== COSMIC SCROLLBAR ==================== */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cosmos-deep);
+  border-left: 1px solid rgba(107, 46, 158, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg,
+      var(--nebula-purple),
+      var(--nebula-violet),
+      var(--cosmic-blue));
+  border-radius: 8px;
+  border: 3px solid var(--cosmos-deep);
+  box-shadow:
+    inset 0 0 6px rgba(255, 255, 255, 0.2),
+    0 0 10px rgba(107, 46, 158, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg,
+      var(--nebula-violet),
+      var(--stellar-blue),
+      var(--electric-blue));
+  box-shadow:
+    inset 0 0 6px rgba(255, 255, 255, 0.3),
+    0 0 15px rgba(139, 66, 196, 0.7);
+}
+
+/* ==================== FILE UPLOADER COSMIC STYLE ==================== */
+[data-testid="stFileUploader"] {
+  background: rgba(10, 14, 39, 0.6) !important;
+  border: 2px dashed rgba(107, 46, 158, 0.4) !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  transition: all 0.3s ease;
+}
+
+[data-testid="stFileUploader"]:hover {
+  border-color: rgba(139, 66, 196, 0.7) !important;
+  background: rgba(10, 14, 39, 0.8) !important;
+  box-shadow: 0 0 30px rgba(107, 46, 158, 0.3);
+}
+
+/* ==================== METRIC / STAT CARDS ==================== */
+[data-testid="stMetric"] {
+  background: rgba(10, 14, 39, 0.5);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(107, 46, 158, 0.3);
+}
+
+/* ==================== COSMIC PARTICLES (floating) ==================== */
+@keyframes float-particle {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.7;
+  }
+}
+
+/* ==================== COSMIC TOOLTIPS (Custom BaseWeb Styling) ==================== */
+div[data-baseweb="tooltip"],
+div[data-baseweb="popover"],
+div[role="tooltip"] {
+  background: rgba(10, 14, 39, 0.95) !important;
+  border: 1px solid rgba(139, 66, 196, 0.6) !important;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(107, 46, 158, 0.4) !important;
+  border-radius: 12px !important;
+  padding: 10px 16px !important;
+  color: var(--star-white) !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.05em !important;
+  backdrop-filter: blur(10px) !important;
+  z-index: 999999 !important;
+}
+
+/* Tooltip Arrow */
+div[data-baseweb="tooltip"]>div {
+  background: rgba(10, 14, 39, 0.95) !important;
+  border-color: transparent !important;
+}
+
+/* Ensure text color inside is correct */
+div[data-baseweb="tooltip"] * {
+  color: var(--star-white) !important;
+}

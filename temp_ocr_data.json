@@ -1,0 +1,3 @@
+{
+    "extracted_text": "CO1 - ALM1 \n1.  \n \n2. Given an input image containing multiple objects (such as a person, dog, car, and bicycle), \nwrite and execute a program to demonstrate the difference between image classification, \nimage localization, and object detection. Explain the output produced by each task with \nrespect to labels and bounding boxes. "
+}
